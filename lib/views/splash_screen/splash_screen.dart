@@ -1,12 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -59,7 +61,9 @@ class SplashScreen extends StatelessWidget {
                           Size(size.width, 55),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacementNamed('/home');
+                      },
                       child: const Text(
                         'Get Started',
                         style: TextStyle(

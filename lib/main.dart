@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_shop_and_care_tips/views/home_screen/home_screen.dart';
 import 'package:pet_shop_and_care_tips/views/splash_screen/splash_screen.dart';
 
 void main() {
@@ -17,7 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {"/": (_) => const SplashScreen()},
+      routes: {
+        "/": (_) => const SplashScreen(),
+        "/home": (_) => const HomeScreen(),
+      },
       initialRoute: '/',
     );
   }
