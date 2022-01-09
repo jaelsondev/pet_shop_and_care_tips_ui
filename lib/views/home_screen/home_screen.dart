@@ -51,57 +51,74 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 295,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(left: 20),
-                  children: [
-                    ...List.generate(15, (index) {
-                      if (index % 2 == 0) {
-                        return Container(
-                          height: 295,
-                          width: 242,
-                          padding: const EdgeInsets.all(22),
-                          margin: const EdgeInsets.only(right: 20),
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                  'assets/images/dog-02.png',
+                child: Hero(
+                  tag: 'image',
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.only(left: 20),
+                    children: [
+                      ...List.generate(15, (index) {
+                        if (index % 2 == 0) {
+                          return GestureDetector(
+                            onTap: () => Navigator.of(context).pushNamed(
+                                '/animal',
+                                arguments: 'assets/images/dog-02.png'),
+                            child: Container(
+                              height: 295,
+                              width: 242,
+                              padding: const EdgeInsets.all(22),
+                              margin: const EdgeInsets.only(right: 20),
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                      'assets/images/dog-02.png',
+                                    ),
+                                    fit: BoxFit.cover),
+                              ),
+                              child: const Text(
+                                '7 Ways to take\ncare of your\npet',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  height: 1.5,
+                                  decoration: TextDecoration.none,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                                fit: BoxFit.cover),
-                          ),
-                          child: const Text(
-                            '7 Ways to take\ncare of your\npet',
-                            style: TextStyle(
+                              ),
+                            ),
+                          );
+                        }
+                        return GestureDetector(
+                          onTap: () => Navigator.of(context).pushNamed(
+                              '/animal',
+                              arguments: 'assets/images/dog-01.png'),
+                          child: Container(
+                            height: 295,
+                            width: 242,
+                            padding: const EdgeInsets.all(22),
+                            margin: const EdgeInsets.only(right: 20),
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/images/dog-01.png',
+                                  ),
+                                  fit: BoxFit.cover),
+                            ),
+                            child: const Text(
+                              'Biggest cat\ncommunity',
+                              style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
                                 height: 1.5,
-                                fontWeight: FontWeight.w600),
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
                           ),
                         );
-                      }
-                      return Container(
-                        height: 295,
-                        width: 242,
-                        padding: const EdgeInsets.all(22),
-                        margin: const EdgeInsets.only(right: 20),
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                                'assets/images/dog-01.png',
-                              ),
-                              fit: BoxFit.cover),
-                        ),
-                        child: const Text(
-                          'Biggest cat\ncommunity',
-                          style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                              height: 1.5,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      );
-                    })
-                  ],
+                      })
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(

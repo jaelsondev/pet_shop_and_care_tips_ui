@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_shop_and_care_tips/views/animal_screen/animal_screen.dart';
 import 'package:pet_shop_and_care_tips/views/home_screen/home_screen.dart';
 import 'package:pet_shop_and_care_tips/views/splash_screen/splash_screen.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (_) => const SplashScreen(),
         "/home": (_) => const HomeScreen(),
+        "/animal": (_) => const AnimalScreen(),
       },
       initialRoute: '/',
     );
